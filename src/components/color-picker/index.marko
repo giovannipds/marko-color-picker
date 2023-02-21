@@ -1,6 +1,7 @@
+import getDefaultColors from "../../util/getDefaultColors";
 class {
   onInput(input) {
-    const colors = input.colors;
+    const colors = input.colors || getDefaultColors();
 
     this.state = {
       selectedColor: colors[0],
