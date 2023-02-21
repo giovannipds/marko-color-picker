@@ -1,5 +1,19 @@
-<ul>
-  <for|color| of=input.colors>
-    <li style={ color: color }>${color}</li>
-  </for>
-</ul>
+class {
+  onInput(input) {
+    const colors = input.colors;
+
+    this.state = {
+      selectedColor: colors[0],
+      colors,
+    };
+  }
+}
+
+<div>
+  <color-picker-header color=state.selectedColor/>
+  <ul>
+    <for|color| of=input.colors>
+      <li style={ color: color }>${color}</li>
+    </for>
+  </ul>
+</div>
