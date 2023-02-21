@@ -7,10 +7,18 @@ class {
       colors,
     };
   }
+
+  handleColorSelected(color) {
+    this.state.selectedColor = color;
+  }
 }
 
 <div>
   <color-picker-header color=state.selectedColor/>
+  <color-picker-footer
+    colors=state.colors
+    on-color-selected("handleColorSelected")
+  />
   <ul>
     <for|color| of=input.colors>
       <li style={ color: color }>${color}</li>
